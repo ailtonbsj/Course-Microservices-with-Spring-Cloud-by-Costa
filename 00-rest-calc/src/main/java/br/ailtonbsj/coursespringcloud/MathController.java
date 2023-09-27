@@ -4,13 +4,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.ailtonbsj.coursespringcloud.exception.UnsuportedMathException;
+
 @RestController
 public class MathController {
 
 	@GetMapping("/sum/{numberOne}/{numberTwo}")
 	public Double sum(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
 		if(!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new Exception();
+			throw new UnsuportedMathException("Please set a numeric value!");
 		}
 		Double sum = convertToDouble(numberOne) + convertToDouble(numberTwo);
 		return sum;
