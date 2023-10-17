@@ -5,7 +5,7 @@
 <img src=".github/logo.png">
 </p>
 
-An course of Spring Cloud and microservices.
+A course of Spring Cloud and microservices.
 
 Creator: Leandro Costa
 
